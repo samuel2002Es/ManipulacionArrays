@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Usos comunes o clásicos de map() sobre los arrays:
+
+            Limpiar datos, seleccionar datos dentro de un array y devolverlos para su utilización en futuras acciones.
+            Añadir un nuevo elemento, modificar agregando un nuevo dato al objeto pero sin modificar el array original.
+            .
+            Tener en cuenta que cuando trabajamos con objetos y map() y retornamos el mismo objeto estamos copiando la referencia en memoria que tiene el objeto original que le aplicamos el map() (esto lo vimos en la clase de mutable vs inmutable, te dejo una lectura: https://platzi.com/tutoriales/1642-javascript-profesional/4559-estructuras-de-datos-inmutables/). Esto provoca que como estamos modificando la referencia en memoria, el array original también sea modificado. Entonces en conclusión, por más que map() sea inmutable en este punto estamos copiando la referencia en memoria y por eso hace el cambio en el original.
+            
+            </p>
+
+    </div>
+    <div id="reto"></div>
+    <script>
+        const store =[
+            {
+                name: "samuel",
+                price: 188,
+                stock: true,
+            }
+        ] ;
+    function solution(){
+        const taxes = store.map(store=> {
+            return `<li>${store.price*.19} `;
+        })
+        reto.innerHTML = `el precio original es de: ${price.join('')} los impuestos son: ${taxes.join('')}`
+    }
+    const price = store.map(store=>{
+        return store.price ;
+    })
+    console.log(price);
+    solution();
+    </script>
+</body>
+</html>
